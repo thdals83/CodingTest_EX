@@ -15,7 +15,9 @@ def solution(phone_book):
     for phone_number in phone_book:
         temp = ""
         for number in phone_number:
-            temp += number
+            temp = temp + number
+            print(temp)
+            print(hash_map)
             if temp in hash_map and temp != phone_number:
                 return False
     return True
