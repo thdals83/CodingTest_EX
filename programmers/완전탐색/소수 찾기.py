@@ -1,3 +1,5 @@
+from itertools import permutations
+
 def solution(s):
     answer = 0
 
