@@ -1,3 +1,4 @@
+#
 def solution(n, number):
 
     arr = [set() for i in range(8)]
