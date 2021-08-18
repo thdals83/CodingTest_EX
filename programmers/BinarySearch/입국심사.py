@@ -18,7 +18,7 @@ def solution(n, times):
         print(sum)
         # n명보다 더 많은 사람을 검사할 수 있을 때 최대시간 감소
         if sum >= n:
-            if answer > mid_time: answer = mid_time;
+            if answer > mid_time: answer = mid_time
             max_time = mid_time - 1
         # n명보다 더 적은 사람을 검사할 수 있을 때 최소시간 증가
         else:
