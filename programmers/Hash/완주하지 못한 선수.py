@@ -1,5 +1,12 @@
+'''
+def solution(participant, completion):
+    print(collections.Counter(participant)),print(collections.Counter(completion))
+    answer = collections.Counter(participant) - collections.Counter(completion)
+    print(answer)
+    return list(answer.keys())[0]
 
-
+#collection.Counter(배열) => dic 값 형태로 해당 이름의 개수를 세준다.
+'''
 
 def solution(participant, completion):
     participant.sort()
