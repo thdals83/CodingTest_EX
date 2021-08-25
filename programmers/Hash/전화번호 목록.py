@@ -1,26 +1,15 @@
-# zip 과 startswith를 이용한 풀이 방법
-# zip은 두 배열 의 값을 순서대로 매칭시킴 말 그대로 zip
-'''
+
+# 문자열의 정렬이기 때문에 숫자의 크기가 아닌 1부터 순차적으로 정렬됨
+# 그걸 이용해서 정렬후 첫번째와 두번째만 숫자를 올려가며 비교해주면 됨
+# zip 은 두 값을 한번에 사용할 수 있는 용도
 def solution(phone_book):
     phone_book.sort()
-    for p1, p2 in zip(phone_book, phone_book[1:]):
-        if p2.startswith(p1):
+
+    for x,y in zip(phone_book,phone_book[1:]):
+        if y.startswith(x):
             return False
     return True
-'''
-def solution(phone_book):
-    hash_map = {}
-    for phone_number in phone_book:
-        hash_map[phone_number] = 1
-    for phone_number in phone_book:
-        temp = ""
-        for number in phone_number:
-            temp = temp + number
-            print(temp)
-            print(hash_map)
-            if temp in hash_map and temp != phone_number:
-                return False
-    return True
+
 
 
 if __name__ == "__main__":
