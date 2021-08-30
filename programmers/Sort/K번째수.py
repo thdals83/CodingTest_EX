@@ -2,11 +2,11 @@ def solution(arr,com):
     res = []
 
     for i in range(len(com)):
-        tmp = []
-        for j in range(com[i][0]-1,com[i][1]):
-            tmp.append(arr[j])
-        tmp.sort()
-        res.append(tmp[com[i][2]-1])
+        box = []
+        for j in range(int(com[i][0]) - 1, int(com[i][1])):
+            box.append(arr[j])
+        box.sort()
+        res.append(box[com[i][2]-1])
 
     return res
 
