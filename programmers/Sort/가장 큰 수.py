@@ -1,12 +1,9 @@
 # lambda ?:? 사용하게 되면 함수 사용처럼 할 수 있음
 # 여기다가 추가로 .sort(key = lambda 를 사용하여 정렬에 사용할 수 있음
 def solution(num):
+    num  = list(map(str,num))
+    num.sort(key=lambda x:x*3, reverse=True)
 
-    num = list(map(str, num))
-    arr = lambda x: x * 3
-    print (arr(num))
-
-    num.sort(key=lambda x: x * 3, reverse=True)
     return str(int(''.join(num)))
 
 
