@@ -1,28 +1,28 @@
 from itertools import permutations
 
-def solution(s):
+
+def solution(numbers):
     answer = 0
+    arr = []
 
-    new_s = list(s)
-    for i in range(2, len(s) + 1):
-        pm = list(permutations(s, i))
-        for j in pm:
-            if len(j) <= len(s):
-                new_s.append(''.join(j))
-    new_s = list(set([int(x) for x in new_s]))
+    for i in range(1, len(numbers) +1):
+        tmp = list(permutations(numbers, i))
+        tmp = list(set(tmp))
+        for j in tmp:
+            if int(''.join(j)) == 0 or int(''.join(j)) == 1:
+                x = 1
+            else:
+                arr.append(int(''.join(j)))
+    arr = list(set(arr))
 
-    if new_s.count(1):
-        new_s.remove(1)
-    if new_s.count(0):
-        new_s.remove(0)
-
-    for x in new_s:
-        i = 2
-        while i * i <= x:
-            if x % i == 0:
+     #소수 체크
+    for i in arr:
+        x = 2
+        while x*x <= i:
+            if i % x == 0:
                 answer -= 1
                 break
-            i += 1
+            x += 1
         answer += 1
 
     return answer
