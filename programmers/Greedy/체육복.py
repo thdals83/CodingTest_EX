@@ -4,7 +4,6 @@ def solution(n,lost,reserve):
     lost1=list(set(lost)-set(reserve))
 
     res = n - len(lost1)
-
     for i in lost1:
         if i - 1 in reserve1:
             res += 1
