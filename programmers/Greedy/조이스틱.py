@@ -24,7 +24,6 @@ def solution(name):
         if sum(arr) == 0: break
 
         left,right = 1,1
-
         while arr[ing - left] == 0:
             left = left + 1
         while arr[ing + right] == 0:
