@@ -16,7 +16,6 @@ def solution(num,k):
         stack.append(i)
 
     if k != 0: stack = stack[:-k]
-
     return ''.join(stack)
 
 if __name__ == "__main__":
