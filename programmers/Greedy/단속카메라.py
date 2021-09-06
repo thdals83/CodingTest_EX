@@ -7,11 +7,7 @@ def solution(routes):
         if x < route[0]:
             res = res + 1
             x = route[1]
-
     return res
-
-
-
 
 
 if __name__ == "__main__":
