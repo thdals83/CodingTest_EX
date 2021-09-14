@@ -7,30 +7,30 @@ word_list에 단어를 담고 해당 단어에서
 diff_list랑 비교해서 target나오면 끝
 안나오면 diff_list 값을 word_list로 담아준다
 '''
+from collections import deque
+
 def solution(begin, target, words):
     if target not in words: return 0
 
-    answer = 0
-    word_len = len(begin)
-    word_list = [begin]
-    diff_word = list()
+    arr = deque()
+    arr.append([begin,0])
+    while arr:
+        word,num = arr.popleft()
+        if target == word: return num
 
-    while True:
-        for wl in word_list:
-            diff_word.clear()
-            for word in words:
-                diff = 0
-                for idx in range(0, word_len):
-                    if wl[idx] != word[idx]: diff = diff + 1
-                    if diff > 1: break
-                if diff == 1:  # 1글자 차이
-                    diff_word.append(word)
-                    words.remove(word)
+        num += 1
+        for wo in words:
+            check = 0
+            for j in range(len(word)):
+                if wo[j] != word[j]: check += 1
+                if check > 1: break
 
-        answer = answer + 1
+            if check == 1:
+                arr.append([wo, num])
 
-        if target in diff_word: return answer
-        else: word_list = diff_word
+        for i in arr:
+            if i[0] in words:
+                words.remove(i[0])
 
 
 if __name__ == "__main__":
