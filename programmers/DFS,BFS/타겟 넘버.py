@@ -21,6 +21,7 @@ def solution(n,target):
 
 
     while queue:
+        print(queue)
         temp, idx = queue.popleft()
         idx += 1
         if idx < num:

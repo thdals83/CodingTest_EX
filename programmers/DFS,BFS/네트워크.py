@@ -1,6 +1,8 @@
+from collections import deque
+
 def solution(n, com):
     answer = 0
-    bfs = []
+    bfs = deque()
     visited = [0] * n
 
     while 0 in visited:
@@ -9,12 +11,14 @@ def solution(n, com):
         visited[x] = 1
 
         while bfs:
-            node = bfs.pop(0)
+            node = bfs.popleft()
             visited[node] = 1
+
             for i in range(n):
-                if visited[i] == 0 and com[node][i] == 1:
+                if visited[i] == 0 and com[node][i] ==1:
                     bfs.append(i)
                     visited[i] = 1
+
         answer += 1
 
     return answer
