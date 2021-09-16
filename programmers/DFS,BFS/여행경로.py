@@ -15,6 +15,8 @@ def solution(tickets):
     path = []
 
     while stack:
+
+        print(path)
         top = stack[-1]
 
         if top not in routes or len(routes[top]) == 0:
@@ -26,8 +28,6 @@ def solution(tickets):
 
     answer = path[::-1]
     return answer
-
-
 
 
 
