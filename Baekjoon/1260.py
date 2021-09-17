@@ -27,7 +27,7 @@ def dfs(graph, num, n):
 
     while stack:
         node = stack.pop()
-        
+
         if node not in res:
             res.append(node)
             for i in range(num, 0, -1):
