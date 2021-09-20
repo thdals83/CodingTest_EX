@@ -18,7 +18,7 @@ def solution(n, com):
                 if visited[i] == 0 and com[node][i] ==1:
                     bfs.append(i)
                     visited[i] = 1
-
+            print(bfs)
         answer += 1
 
     return answer

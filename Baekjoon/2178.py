@@ -7,7 +7,6 @@ def bfs(n,m,arr):
     dy = [0, 0, -1, 1]
     queue.append([[0, 0], 0])
 
-
     while queue:
         tmp = queue.popleft()
         x, y, num = tmp[0][0], tmp[0][1], tmp[1]
