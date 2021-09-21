@@ -20,7 +20,7 @@ def bfs(n,m,arr):
             if 0 <= a < n and 0 <= b < m and arr[a][b] == 1:
                 queue.append([[a,b],num])
                 arr[a][b] = 0
-`
+
 if __name__ == "__main__":
     n, m = map(int, input().split())
     arr = []
