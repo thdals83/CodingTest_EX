@@ -9,7 +9,7 @@ for _ in range(n):
     maxq,minq = [],[]
     heapq.heapify(maxq)
     heapq.heapify(minq)
-    visited = [0] * 1000001
+    visited = [0] * 40
 
     for key in range(num):
         x, y = input().split()
@@ -30,7 +30,6 @@ for _ in range(n):
                 if minq:
                     visited[minq[0][1]] = 0
                     heapq.heappop(minq)
-        print(maxq,minq)
 
     while minq and visited[minq[0][1]] == 0:
         heapq.heappop(minq)
