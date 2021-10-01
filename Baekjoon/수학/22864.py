@@ -13,6 +13,5 @@ for _ in range(24):
         if now < 0:
             now = 0
 
-
 print(all)
 
