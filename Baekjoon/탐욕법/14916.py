@@ -1,6 +1,7 @@
 import sys
 input = sys.stdin.readline
 
+
 x = int(input())
 num = x % 5
 
