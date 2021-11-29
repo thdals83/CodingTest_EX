@@ -26,6 +26,7 @@ for x in range(r):
 
         if cnt >= 3:
             res[x][y] = '.'
+            
 start_y, end_y = 0, 0
 for i in range(r):
     if 'X' in res[i]:
