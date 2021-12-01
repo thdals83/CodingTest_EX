@@ -12,6 +12,5 @@ while True:
     cnt += 1
 
 arr = sorted(dic.keys())
-
 for i in arr:
     print("%s %.4f" % (i, dic[i]*100/cnt))
