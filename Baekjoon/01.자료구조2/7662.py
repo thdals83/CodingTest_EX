@@ -1,49 +1,51 @@
-import sys
 import heapq
 from collections import defaultdict
+import sys
+input = sys.stdint.readline
 
-def input():
-    return sys.stdin.readline().rstrip()
+t = int(input())
 
-for T in range(int(input())):
-    max_q = []
-    min_q = []
-    total_ele_cnt = 0
-    elements_cnt = defaultdict(int)
+for _ in range(t):
+    maxq, minq = [], []
+    cnt = 0
+    element  = defaultdict(int)
 
-    for _ in range(int(input())):
-        print(elements_cnt)
-        operator, number = input().split()
-        if operator == 'I':
-            number = int(number)
-            heapq.heappush(max_q, -number)
-            heapq.heappush(min_q, number)
-            elements_cnt[number] += 1
-            total_ele_cnt += 1
+    x = int(input())
+    for _ in range(x):
+        op, num = input().split()
+        num = int(num)
+
+        if op == 'I':
+            heapq.heappush(minq, num)
+            heapq.heappush(maxq, -num)
+            element[num] += 1
+            cnt +=1
         else:
-            if total_ele_cnt > 0:
-                if number == '1':
+            if cnt > 0:
+                if num == 1:
                     while True:
-                        del_num = -heapq.heappop(max_q)
-                        if elements_cnt[del_num] != 0:
-                            elements_cnt[del_num] -= 1
+                        del_num = -heapq.heappop(maxq) # ele 가 이미 0이면 빠져나간 수이므로 계속 삭제
+                        if element[del_num] != 0:
+                            element[del_num] -= 1
                             break
                 else:
                     while True:
-                        del_num = heapq.heappop(min_q)
-                        if elements_cnt[del_num] != 0:
-                            elements_cnt[del_num] -= 1
+                        del_num = heapq.heappop(minq)  # ele 가 이미 0이면 빠져나간 수이므로 계속 삭제
+                        if element[del_num] != 0:
+                            element[del_num] -= 1
                             break
-                total_ele_cnt -= 1
-    if total_ele_cnt:
-        while True:
-            max_v = -heapq.heappop(max_q)
-            if elements_cnt[max_v] != 0:
-                break
-        while True:
-            min_v = heapq.heappop(min_q)
-            if elements_cnt[min_v] != 0:
-                break
-        print(max_v, min_v)
-    else:
-        print('EMPTY')
+            cnt -= 1
+
+
+if cnt:
+    while True:
+        max_v = -heapq.heappop(maxq)
+        if element[max_v] != 0:
+            break
+    while True:
+        min_v = heapq.heappop(minq)
+        if element[min_v] != 0:
+            break
+    print(max_v, min_v)
+else:
+     print('EMPTY')
