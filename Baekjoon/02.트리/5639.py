@@ -8,27 +8,24 @@ while True:
     if not node: break
     preorder.append(int(node))
 
-
 def post(start, end):
+    # 역전시 리턴
     if start > end: return
 
+    # 루트 노드
     root = preorder[start]
     idx = start + 1
 
+    # 루트보다 커지는 지점을 찾는 과정
     while idx <= end:
         if preorder[idx] > root: break
         idx += 1
 
-    post(start + 1, idx - 1)
-    post(idx, end)
+    post(start + 1, idx - 1) #왼쪽 서브트리
+    post(idx, end)  #오른쪽 서브트리
     print(root)
 
-
 post(0, len(preorder) - 1)
-
-
-
-
 
 
 '''
