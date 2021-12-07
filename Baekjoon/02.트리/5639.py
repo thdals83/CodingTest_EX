@@ -27,7 +27,6 @@ def post(start, end):
 
 post(0, len(preorder) - 1)
 
-
 '''
 import sys
 input = sys.stdin.readline
