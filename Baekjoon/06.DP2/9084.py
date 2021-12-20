@@ -10,6 +10,9 @@ for _ in range(t):
 
     for i in arr:
         for j in range(1, m + 1):
+
+            print(dp)
+            print(i,j)
             if j - i >= 0:
                 dp[j] += dp[j - i]
 
