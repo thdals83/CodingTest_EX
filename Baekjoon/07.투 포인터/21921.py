@@ -14,6 +14,7 @@ best = sum(arr[0:x])
 tmp = best
 
 for i in range(x, n):
+    print(i)
     tmp -= arr[i - x]
     tmp += arr[i]
     if best <= tmp:
