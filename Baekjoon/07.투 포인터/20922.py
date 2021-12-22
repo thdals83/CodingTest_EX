@@ -1,25 +1,3 @@
-from collections import defaultdict
-
-n,k = map(int,input().split())
-arr = list(map(int,input().split()))
-
-count = defaultdict(list)
-
-res = 0
-start = 0
-for i in range(len(arr)):
-    count[arr[i]].append(i)
-
-    if len(count[arr[i]]) > k:
-        res = max(res, i - start)
-        start = (count[arr[i]].pop(0) + 1)
-
-    # print(count)
-    # print(arr[i], len(count[arr[i]]))
-res = max(res, n - start)
-print(res)
-
-'''
 N, K = map(int, input().split())
 numbers = list(map(int, input().split()))
 left, right = 0, 0
@@ -35,4 +13,3 @@ while right < N:
         left += 1
     answer = max(answer, right - left)
 print(answer)
-'''
