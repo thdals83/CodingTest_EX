@@ -14,10 +14,16 @@ def solution(genres,plays):
         maxgen[x] = maxgen.get(x, 0) + y
         i += 1
 
+    print(song)
+    print(maxgen)
+
     sortgen = sorted(maxgen.items(), key = lambda x:x[1], reverse=True)
+
     res = []
+
     for i in sortgen:
         sortsong = sorted(song[[i[0]][0]], key= lambda x:x[0], reverse= True)
+
         if len(sortsong)  < 2:
             res.append(sortsong[0][1])
         else:
@@ -25,7 +31,6 @@ def solution(genres,plays):
             res.append(sortsong[1][1])
 
     return res
-
 
 if __name__ =="__main__":
     g = ["classic", "pop", "classic", "classic", "pop"]
