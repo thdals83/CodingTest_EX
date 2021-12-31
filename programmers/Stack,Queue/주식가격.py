@@ -2,11 +2,12 @@ def solution(price):
     answer = []
 
     for i in range(len(price)):
-        count = 0
+        cnt = 0
         for j in range(i+1,len(price)):
-            count += 1
-            if price[i] > price[j]:break
-        answer.append(count)
+            cnt += 1
+            if price[i] > price[j]:
+                break
+        answer.append(cnt)
 
     return answer
 
