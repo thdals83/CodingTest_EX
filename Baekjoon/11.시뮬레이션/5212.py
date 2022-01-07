@@ -44,6 +44,5 @@ for j in range(c):
         if 'X' == res[i][j]:
             tmp.append(j)
             break
-
 for y in range(start_y, end_y + 1):
     print("".join(res[y][tmp[0]:tmp[-1] + 1]))
