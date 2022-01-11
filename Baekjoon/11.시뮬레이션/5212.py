@@ -18,6 +18,7 @@ for x in range(r):
             nx = x + dx[k]
             ny = y + dy[k]
 
+
             if nx < 0 or nx >= r or ny < 0 or ny >= c:
                 cnt += 1
                 continue
