@@ -5,7 +5,6 @@ from typing import List
 min(a,b)의 합으로 가장 큰 수를 만드려면, 작은 수 끼리 묶고 큰 수끼리 묶어야 한다.
  => 정렬하면 되겠네
  => num.length 도 짝수임
-'''
 
 #파이썬다운 방식
 def arrayPairSum (nums: List[int]) -> int:
@@ -22,7 +21,7 @@ def arrayPairSum (nums: List[int]) -> int:
         res += nums[i]
 
     return res
-'''
+
 if __name__ == "__main__":
     nums = [1, 4, 3, 2]
     nums2 = [6, 2, 6, 5, 1, 2]
