@@ -5,8 +5,10 @@ def groupAnagrams(strs: List[str]) -> List[List[str]]:
     arr = defaultdict(list)
 
     for word in strs:
+        print(sorted(word))
         arr[''.join(sorted(word))].append(word)
 
+    print(arr)
     return list(arr.values())
 
 if __name__ == "__main__":
