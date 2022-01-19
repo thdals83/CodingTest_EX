@@ -7,12 +7,12 @@ class ListNode:
         self.val = val
         self.next = None
 
-'''
+
 # 책 풀이코드(재귀 방법을 이용)
 def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
     # li = [], l2 = [] ==> []
     # li = [], l2 = [0] ==> [0]
-    
+
     if (not l1) or (l2 and l1.val > l2.val):
         l1,l2 = l2,l1
 
@@ -20,7 +20,6 @@ def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
         l1.next = mergeTwoLists(l1.next,l2)
 
     return l1
-'''
 
 
 def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
@@ -28,7 +27,7 @@ def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
     tail = res
 
     while l1 and l2:
-        if l1.val < l2.val:
+        if l1.val <= l2.val:
             tail.next = l1
             l1 = l1.next
         else:
@@ -38,7 +37,7 @@ def mergeTwoLists(l1: ListNode, l2: ListNode) -> ListNode:
 
     if l1:
         tail.next = l1
-    elif l2:
+    if l2:
         tail.next = l2
 
     return res.next
