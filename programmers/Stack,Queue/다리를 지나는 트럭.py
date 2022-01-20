@@ -1,3 +1,4 @@
+from collections import deque
 # 경과시간 1씩 추가
 # 건너고 있는 트럭 (ing) 1씩 증가
 # 대기 트럭에 트럭이 있는 경우
@@ -7,20 +8,32 @@
 #
 def solution(length,weight,truck):
     answer = 1
-    ing = []
-    ing.append([truck.pop(0),0])
+    truck = deque(truck)
+    ingweight = deque()
+    ingtruck = deque()
 
-    while len(ing) != 0:
+    ingtruck.append(0)
+    ingweight.append(truck[0])
+    truck.popleft()
+
+    while ingtruck:
         answer += 1
 
-        for i in range(len(ing)):
-            ing[i][1] += 1
+        for i in range(len(ingtruck)):
+            ingtruck[i] += 1
 
-        if ing[0][1] == length: ing.pop(0)
+        while ingtruck:
+            if ingtruck[0] == length:
+                ingtruck.popleft()
+                ingweight.popleft()
+            else:
+                break
 
-        if len(truck) != 0:
-            if sum(x[0] for x in ing)+ truck[0] <= weight:
-                ing.append([truck.pop(0),0])
+        if truck:
+            if sum(ingweight) + truck[0] <= weight:
+                ingtruck.append(0)
+                ingweight.append(truck[0])
+                truck.popleft()
 
     return answer
 
