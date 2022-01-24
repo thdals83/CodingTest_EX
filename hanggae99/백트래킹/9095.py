@@ -1,3 +1,4 @@
+
 n = int(input())
 
 dp = [1, 2, 4]
@@ -7,7 +8,7 @@ for i in range(3,10):
 for _ in range(n):
     x = int(input())
     print(dp[x - 1])
-    
+
 '''
 
 def check(lv, path):
@@ -25,6 +26,7 @@ def check(lv, path):
         path.append(num)
         check(lv + 1, path)
         path.pop()
+
 
 arr = [1, 2, 3]
 t = int(input())
