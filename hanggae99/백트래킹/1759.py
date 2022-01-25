@@ -2,6 +2,7 @@
 # 최소 한 개의 모음(a, e, i, o, u)
 # 최소 두개의 자음으로 구성
 # 중복없이 알파벳 순서로 순열로
+
 def findtrue(cnt):
     cnt = set(cnt)
     tt = set(["a", "e", "i", "o", "u"])
@@ -27,7 +28,6 @@ def check(lv,idx, path):
         path.append(arr[i])
         check(lv + 1, i+1, path)
         path.pop()
-
 
 l, c = map(int,input().split())
 arr = list(input().split())

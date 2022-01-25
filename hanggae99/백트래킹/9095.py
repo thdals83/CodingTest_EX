@@ -1,4 +1,4 @@
-
+'''
 n = int(input())
 
 dp = [1, 2, 4]
@@ -36,4 +36,3 @@ for _ in range(t):
     res = 0
     check(0,[])
     print(res)
-'''
