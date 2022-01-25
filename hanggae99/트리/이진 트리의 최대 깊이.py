@@ -70,6 +70,6 @@ class Solution:
 
 if __name__ == "__main__":
     x = Solution()
-    root = [3, 9, 20, None, None, 15, 7]
+    root = [3,9,20,null,null,15,7]
     inputtree = make_tree_by(root, 0)
     print(x.maxDepth(inputtree))
