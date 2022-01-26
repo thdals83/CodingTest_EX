@@ -22,17 +22,18 @@ def make_tree_by(lst, idx):
         parent.right = make_tree_by(lst, 2 * idx + 2)
     return parent
 
-# DFS 스택 사용
 class Solution:
     longest: int = 0
 
-    def diameterOfBinaryTree(self, root: [TreeNode]) -> int:
+    def diameterOfBinaryTree(self, root: TreeNode) -> int:
+
         def dfs(node: TreeNode) -> int:
-            if not node:
-                return -1
+            if not node: return -1
+
             # 왼쪽, 오른쪽 각각 리프 노드까지 탐색
             left = dfs(node.left)
             right = dfs(node.right)
+
 
             # 가장 긴 경로
             self.longest = max(self.longest, left + right + 2)
@@ -46,5 +47,6 @@ class Solution:
 if __name__ == "__main__":
     x = Solution()
     root = [4,-7,-3,null,null,-9,-3,9,-7,-4,null,6,null,-6,-6,null,null,0,6,5,null,9,null,null,-1,-4,null,null,null,-2]
+    #root = [1,2,3,4,5]
     inputtree = make_tree_by(root, 0)
     print(x.diameterOfBinaryTree(inputtree))
