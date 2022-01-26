@@ -5,7 +5,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
 class Solution:
     def invertTree(self, root: [TreeNode]) -> [TreeNode]:
         queue = deque([root])
