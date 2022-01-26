@@ -6,7 +6,6 @@ n = int(input())
 res = [0] * (n+1)
 arr = [[] for _ in range(n+1)]
 
-print(arr)
 for _ in range(n - 1):
     x, y = map(int,input().split())
     arr[x].append(y)
@@ -14,7 +13,7 @@ for _ in range(n - 1):
 
 queue = deque()
 queue.append(1)
-
+print(arr)
 while queue:
     node = queue.popleft()
 
