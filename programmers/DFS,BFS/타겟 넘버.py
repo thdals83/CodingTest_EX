@@ -16,6 +16,7 @@ def solution(n,target):
     answer = 0
     queue = deque()
     num = len(n)
+
     queue.append([n[0],0])
     queue.append([-1*n[0],0])
 
@@ -34,9 +35,6 @@ def solution(n,target):
 
 
     return answer
-
-
-
 
 if __name__ == "__main__":
     num = [1, 1, 1, 1, 1]
