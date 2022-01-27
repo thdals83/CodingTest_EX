@@ -18,11 +18,9 @@ def solution(n,target):
     num = len(n)
 
     queue.append([n[0],0])
-    queue.append([-1*n[0],0])
-
+    queue.append([-n[0],0])
 
     while queue:
-        print(queue)
         temp, idx = queue.popleft()
         idx += 1
         if idx < num:
@@ -31,8 +29,6 @@ def solution(n,target):
         else:
             if temp == target:
                 answer +=1
-
-
 
     return answer
 
