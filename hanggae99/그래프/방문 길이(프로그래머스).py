@@ -49,7 +49,7 @@ def solution(dirs):
                     answer += 1
                     visited.append(back)
                     visited.append(back2)
-
+    print(visited)
     return answer
 
 if __name__ == "__main__":
