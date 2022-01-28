@@ -18,7 +18,7 @@ def arrayPairSum (nums: List[int]) -> int:
 # 내가 푼 풀이
 def arrayPairSum (nums: List[int]) -> int:
     res = 0
-    #정렬
+    #힙
     nums.sort()
 
     for i in range(0, len(nums),2):
