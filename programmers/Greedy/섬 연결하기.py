@@ -22,7 +22,7 @@ def solution(n, costs):
 '''
 '''
 크루스칼 알고리즘 정석
-1. 간선의 길이가 짧은 순으로 정렬
+1. 간선의 길이가 짧은 순으로 힙
 2. 간선을 선택 하며 => 사이클이 발생하지 않는지 확인 (union find 기법)
 3. union find 기법 => 추가하려는 간선의 양 끝점이 같은 집합에 있지 않아야 함
 '''
@@ -50,7 +50,7 @@ def solution(n, costs):
     # 부모 테이블 자기 자신으로 초기화
     for i in range(n): parent[i] = i
 
-    #스루스칼 알고리즘 비용순 정렬
+    #스루스칼 알고리즘 비용순 힙
     costs.sort(key = lambda x:x[2])
     print(costs)
     #크루스칼 알고리즘 수행
