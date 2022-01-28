@@ -19,3 +19,33 @@ class Solution:
             if head and cur.val > head.val:
                 cur = parent
         return parent.next
+
+'''
+class Solution:
+    def insertionSortList(self, head: Optional[ListNode]) -> Optional[ListNode]: 
+        print(head)
+        sort = []
+        while head:
+            num = head.val
+            head = head.next
+                        
+            if len(sort) == 0:
+                sort.append(num)
+            else:
+                che = True
+                for i in range(len(sort)):
+                    if sort[i] > num:
+                        sort.insert(i, num)
+                        che = False
+                        break
+                if che:
+                    sort.append(num)
+        
+        final = start = ListNode(None)
+        for n in sort:
+            tmp = ListNode(n)
+            start.next = tmp
+            start = start.next
+                      
+        return final.next
+'''
