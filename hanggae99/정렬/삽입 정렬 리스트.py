@@ -4,7 +4,6 @@ class ListNode:
         self.val = x
         self.next = None
 
-
 class Solution:
     def insertionSortList(self, head: ListNode) -> ListNode:
         # 초기값 변경
