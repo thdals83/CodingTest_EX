@@ -1,10 +1,10 @@
 # Definition for singly-linked list.
-# class ListNode:
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
 class Solution:
-    def sortList(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def sortList(self, head: [ListNode]) -> [ListNode]:
         node = head
         arr = []
 
@@ -20,3 +20,4 @@ class Solution:
             node = node.next
 
         return head
+
