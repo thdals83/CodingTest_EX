@@ -3,6 +3,7 @@ input = sys.stdin.readline
 
 def check(res):
     res.sort()
+    print(res)
     for i in range(len(res) - 1):
         if res[i] in res[i + 1][:len(res[i])]:
             return "NO"
