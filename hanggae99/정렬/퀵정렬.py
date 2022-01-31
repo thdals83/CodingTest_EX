@@ -1,5 +1,3 @@
-
-
 def queicsort(array, start, end):
     if start >= end: return
 
@@ -17,7 +15,6 @@ def queicsort(array, start, end):
             array[right], array[pivot] = array[pivot], array[right]
         else:
             array[left], array[right] = array[right], array[left]
-
 
     queicsort(array, start, right - 1)
     queicsort(array, right + 1, end)
