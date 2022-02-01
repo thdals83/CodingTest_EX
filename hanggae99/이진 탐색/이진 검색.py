@@ -41,7 +41,6 @@ class Solution:
         return - 1
 '''
 
-
 # 이진 검색 알고리즘 bisect
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
