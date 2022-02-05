@@ -1,3 +1,6 @@
+import sys
+input = sys.stdin.readline
+
 # 집의 개수(N)와 공유기의 개수(C)를 입력 받기
 n, c = list(map(int, input().split(' ')))
 
