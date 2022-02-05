@@ -28,7 +28,7 @@ for _ in range(t):
 
             if 0 <= nx < n and 0 <= ny < n:
                 cost = dist + graph[nx][ny]
-                
+
                 if cost < distance[nx][ny]:
                     distance[nx][ny] = cost
                     heapq.heappush(queue,(cost,nx,ny))
