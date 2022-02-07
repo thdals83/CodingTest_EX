@@ -5,7 +5,6 @@ INF = int(1e9)
 v, e = map(int,input().split())
 graph = [[INF] * (v + 1) for _ in range(v + 1)]
 
-
 for _ in range(e):
     a, b, c = map(int,input().split())
     graph[a][b] = c
