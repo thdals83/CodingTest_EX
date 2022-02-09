@@ -2,7 +2,6 @@ from typing import List
 import sys
 from collections import OrderedDict
 
-
 class Solution:
     def rob(self, nums: List[int]) -> int:
         if not nums: return 0
