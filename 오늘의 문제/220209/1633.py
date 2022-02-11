@@ -14,4 +14,5 @@ for i in range(sz):
                 dp[i + 1][w][b + 1] = max(dp[i + 1][w][b + 1], dp[i][w][b] + info[i][1])
             dp[i + 1][w][b] = max(dp[i + 1][w][b], dp[i][w][b])
 
+
 print(dp[sz][15][15])
