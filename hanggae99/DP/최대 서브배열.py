@@ -1,6 +1,7 @@
 import bisect
 from typing import List
 import sys
+from collections import defaultdict
 '''
 # DP
 class Solution:
@@ -20,6 +21,7 @@ class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         best_sum = -sys.maxsize
         current_sum = 0
+        arr = defaultdict(int)
 
         for num in nums:
             current_sum = max(num, current_sum + num)
