@@ -12,15 +12,15 @@ def solution(data):
         if val > mid:
             hq.heappush(min_q, val)
         else:
-            hq.heappush(max_q, (-val, val))
+            hq.heappush(max_q, -val)
 
         if idx % 2 == 1:
             if len(max_q) < len(min_q):
-                hq.heappush(max_q, (-mid, mid))
+                hq.heappush(max_q, -mid)
                 mid = hq.heappop(min_q)
             elif len(max_q) > len(min_q):
                 hq.heappush(min_q, mid)
-                mid = hq.heappop(max_q)[1]
+                mid = -hq.heappop(max_q)
             result.append(mid)
 
     print(len(result))
