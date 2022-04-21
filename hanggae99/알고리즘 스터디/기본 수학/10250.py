@@ -3,10 +3,12 @@
 - W개방, H층 엘베 왼쪽
 '''
 
-x = int(input())
-for _ in range(x):
-    h, w, n = map(int,input().split())
-    if n % h == 0:
-        print(str(h) + "0" + str(n // h))
+x=int(input())
+
+for i in range(x):
+    h,w,n=map(int,input().split())
+
+    if n%h == 0:
+        print("%d%02d" % (h, n//h))
     else:
-        print(str(n % h) + "0" + str(n // h + 1))
+        print("%d%02d" % (n % h, n//h+1))
