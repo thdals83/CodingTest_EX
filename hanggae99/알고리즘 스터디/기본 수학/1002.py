@@ -14,7 +14,7 @@ for _ in range(x):
         else:
             print(0)
     else:
-        if d < add and d > sub:
+        if add > d > sub:
             print(2)
         elif d == add or d == sub:
             print(1)
