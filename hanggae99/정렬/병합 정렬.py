@@ -1,3 +1,6 @@
+'''
+병합정렬 두개가 남을때까지 쪼개고 이를 계쏙 합치면서 정렬 O(NlogN)
+'''
 def merge(arr1, arr2):
     result = []
     i = j = 0
