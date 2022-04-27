@@ -13,6 +13,7 @@ for _ in range(n - 1):
     arr[y].append(x)
 
 queue.append(1)
+
 while queue:
     node = queue.popleft()
     for i in arr[node]:
@@ -22,4 +23,3 @@ while queue:
 
 for i in visited[2:]:
     print(i)
-
