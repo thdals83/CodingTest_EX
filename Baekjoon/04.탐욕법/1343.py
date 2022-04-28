@@ -1,7 +1,13 @@
-x = input()
+import sys
+input = sys.stdin.readline
 
-x = x.replace("XXXX", "AAAA")
-x = x.replace("XX", "BB")
+str = input()
 
-if 'X' in x: print(-1)
-else: print(x)
+str = str.replace("XXXX", "AAAA")
+str = str.replace("XX", "BB")
+
+
+if 'X' in str:
+    print(-1)
+else:
+    print(str)
