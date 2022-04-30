@@ -17,8 +17,6 @@ def solution(n, times):
 
     return start
 
-
-
 if __name__ == "__main__":
     n = 6
     times = [7, 10]
