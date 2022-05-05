@@ -1,53 +1,55 @@
+'''
+DFS와 BFS로 탐색한 결과 출력
+- 방문할 수 있는 정점이 여러 개면 가장 작은 것 부터
+'''
 from collections import deque
 
-def bfs(graph, num, n):
+
+# dfs - stack
+def dfs(graph, num, target):
     res = []
-    queue = deque()
-    visited = [0] * (num + 1)
-    queue.append(n)
-
-    while queue:
-        node = queue.popleft()
-
-        if node not in res:
-            res.append(node)
-            for i in range(1, num + 1):
-                if visited[i] == 0 and graph[node][i] == 1:
-                    queue.append(i)
-                    visited[i] = 1
-    x = ""
-    for i in res:
-        x += str(i)+" "
-    return x
-
-def dfs(graph, num, n):
-    res = []
-    stack = [n]
-    visited = [0] * (num + 1)
+    visited = [0 for _ in range(num + 1)]
+    stack = [target]
 
     while stack:
         node = stack.pop()
 
-        if node not in res:
-            res.append(node)
+        if str(node) not in str(res):
+            res.append(str(node))
             for i in range(num, 0, -1):
                 if visited[i] == 0 and graph[node][i] == 1:
                     stack.append(i)
                     visited[node] = 1
 
-
-    x = ""
-    for i in res:
-        x += str(i)+" "
-    return x
+    return ' '.join(res)
 
 
-n,m,v = map(int, input().split())
-g = [[0 for i in range(n+1)] for _ in range(n+1)]
+# bfs
+def bfs(graph, num, target):
+    res = [str(target)]
+    visited = [0 for _ in range(num + 1)]
+    queue = deque()
+    queue.append(target)
+    visited[target] = 1
 
-for _ in range(m):
-    x, y = map(int, input().split())
-    g[x][y] = g[y][x] = 1
+    while queue:
+        node = queue.popleft()
 
-print(dfs(g, n, v))
-print(bfs(g, n, v))
+        for i in range(1, num + 1):
+            if visited[i] == 0 and graph[node][i] == 1:
+                queue.append(i)
+                visited[i] = 1
+                res.append(str(i))
+    return ' '.join(res)
+
+
+if __name__ == "__main__":
+    n, m, v = map(int, input().split())
+    graph = [[0 for _ in range(n + 1)] for _ in range(n + 1)]
+
+    for _ in range(m):
+        x, y = map(int, input().split())
+        graph[x][y] = graph[y][x] = 1
+
+    print(dfs(graph, n, v))
+    print(bfs(graph, n, v))
