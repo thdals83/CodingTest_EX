@@ -4,45 +4,41 @@ DFS와 BFS로 탐색한 결과 출력
 '''
 from collections import deque
 
-
 # dfs - stack
 def dfs(graph, num, target):
-    res = []
+    res = ""
     visited = [0 for _ in range(num + 1)]
     stack = [target]
 
     while stack:
         node = stack.pop()
 
-        if str(node) not in str(res):
-            res.append(str(node))
+        if visited[node] == 0:
+            visited[node] = 1
+            res += str(node) + " "
+
             for i in range(num, 0, -1):
                 if visited[i] == 0 and graph[node][i] == 1:
                     stack.append(i)
-                    visited[node] = 1
-
-
-    return ' '.join(res)
-
+    return res
 
 # bfs
 def bfs(graph, num, target):
-    res = [str(target)]
     visited = [0 for _ in range(num + 1)]
-    queue = deque()
-    queue.append(target)
+    queue = deque([target])
     visited[target] = 1
+    res =""
 
     while queue:
         node = queue.popleft()
+        res += str(node) + " "
 
         for i in range(1, num + 1):
             if visited[i] == 0 and graph[node][i] == 1:
                 queue.append(i)
                 visited[i] = 1
-                res.append(str(i))
-    return ' '.join(res)
 
+    return res
 
 if __name__ == "__main__":
     n, m, v = map(int, input().split())
