@@ -1,19 +1,22 @@
-n = int(input())
-che = list(map(int,input().split()))
-arr = [1] * (max(che) + 1)
-arr[1] = 0
 
-for i in range(2, max(che) + 1):
-    if arr[i] == 1:
+n = int(input())
+arr = list(map(int,input().split()))
+
+sosu = [1] * (max(arr) + 1)
+sosu[1] = 0
+# 소수 체크
+
+for i in range(2, len(sosu)):
+    if sosu[i] == 1:
         j = 2
-        while i * j <= max(che):
-            arr[i * j] = 0
+
+        while i * j <= len(sosu) - 1:
+            sosu[i * j] = 0
             j += 1
 
 res = 0
-for num in che:
-    if arr[num] == 1:
-        res += 1
+for i in arr:
+    if sosu[i] == 1:
+       res += 1
 
 print(res)
-
