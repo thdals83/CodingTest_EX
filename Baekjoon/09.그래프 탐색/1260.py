@@ -42,7 +42,6 @@ def bfs(graph, num, target):
     while queue:
         node = queue.popleft()
         res += str(node) + " "
-
         for i in range(1, num + 1):
             if visited[i] == 0 and graph[node][i] == 1:
                 queue.append(i)
